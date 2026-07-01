@@ -10,12 +10,9 @@ An **ESMFold2 co-folding ensemble** with a **pocket transplant** for pose qualit
 
 1. **Generation.** ESMFold2 (latest SDK, no-MSA), **200 diffusion samples per ligand** on the 293-aa PXR LBD. No templates, no fine-tuning.
 2. **Selection.** Best pose per ligand by interface-pTM (best-iptm).
-3. **Pocket transplant.** The selected ESM ligand is rigidly placed into an **DeepMind AlphaFold3-quality pocket** (Kabsch superposition on pocket Cα), which lifts LDDT-LP from ~0.885 (ESM) to 0.919 and carries the ligand into a cleaner receptor context.
+3. **Pocket transplant.** The selected ESM ligand is rigidly placed into an **AlphaFold3-quality pocket** (Kabsch superposition on pocket Cα), which lifts LDDT-LP from ~0.885 (ESM) to 0.919 and carries the ligand into a cleaner receptor context.
 Net effect vs raw ESM (0.5238): **+0.030 from the transplant → 0.5538.**
 
-## Local Validation
-
-All development was gated on a **17-system PXR hold-out refset** with the **official OpenStructure LDDT-PLI scorer** (OST 2.11.1, defaults: radius 6 Å, thresholds [0.5,1,2,4], `add_mdl_contacts=True`, superposition-free, heavy-atom, symmetry-maximized). The board's public leaderboard reflects fragment ligands only, so the refset was the primary generalization check.
 
 ## What we tried (and what the data said)
 
@@ -55,7 +52,6 @@ All scores are measured on the official board (LDDT-PLI · BiSyRMSD · LDDT-LP).
 - **AF3-pocket transplant** is the one lever that moved the board (+0.030 → 0.5538).
 - **Selection wall:** confidence selectors (iptm, iface-iptm, mPAE, AF3 ranking) pick ≈ random; oracle ~0.72 is uncapturable by any confidence signal.
 - **Refinement and tail-rescue are inert-to-negative** — our ESM placement already beats Boltz/AF3/Protenix on its own worst picks (a stronger base flips the sign of amit's tail-rescue trick).
-- **Physics-based (ML-potential) selection is the first thing to cross the wall** on ground truth (+0.044), once the pose energies are made *comparable* (fixed-pocket fix).
 
 ## Software
 
