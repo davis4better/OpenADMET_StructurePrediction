@@ -1,7 +1,6 @@
 # OpenADMET PXR — Structure Prediction Track
 
-**Best submission:**  **LDDT-PLI 0.5538 · BiSyRMSD 3.53 · LDDT-LP 0.9188**.
-
+**Best submission:**  **LDDT-PLI 0.5538 · BiSyRMSD 3.5271 · LDDT-LP 0.9196**.
 ---
 
 ## Method
@@ -11,7 +10,8 @@ An **ESMFold2 co-folding ensemble** with a **pocket transplant** for pose qualit
 1. **Generation.** ESMFold2 (latest SDK, no-MSA), **200 diffusion samples per ligand** on the 293-aa PXR LBD. No templates, no fine-tuning.
 2. **Selection.** Best pose per ligand by interface-pTM (best-iptm).
 3. **Pocket transplant.** The selected ESM ligand is rigidly placed into an **AlphaFold3-quality pocket** (Kabsch), which lifts LDDT-LP from ~0.885 (ESM) to 0.919 and carries the ligand into a cleaner receptor context.
-Net effect vs raw ESM (0.5238): **+0.030 from the transplant → 0.5538.**
+4. **Refinement** The submission files are then refined by [HiQBind](https://github.com/THGLab/HiQBind). We also double check if the final output follow the physic rules with ChimeraX.
+Net effect vs raw ESM (0.5238): **+0.030 from the transplant → 0.5538.** 
 
 
 ## What we tried (and what the data said)
