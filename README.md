@@ -49,9 +49,6 @@ All scores are measured on the official board (LDDT-PLI · BiSyRMSD · LDDT-LP).
 | Tail-rescue | Protenix-v2 on tail (`protenix_rescue8`) | 0.5412 | 4.279 | 0.920 | same — no independent generator rescues our tail |
 | Fine-tune | Boltz-2 NR/PXR FT, all-184 (`ft_board_transplant`) | 0.4925 | 4.001 | 0.915 | FT bimodal on fragments; iptm can't harvest |
 | Fine-tune | FT fragment-routed hybrid | <0.5538 | — | — | fragment gain doesn't survive on board |
-| Physics-select | UMA energy, *buggy* per-pose pocket, transplant | 0.5095 | 3.926 | 0.910 | energies incomparable (variable atom set) |
-| Physics-select | same, raw (no transplant) | 0.5003 | 3.923 | 0.879 | transplant not the cause — selection was broken |
-| Physics-select | **UMA energy, fixed pocket** (bug fixed) | *board pending* | — | — | refset ground-truth **+0.044 vs iptm** (validated) |
 
 ## What the data said
 
