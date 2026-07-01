@@ -63,7 +63,6 @@ All scores are measured on the official board (LDDT-PLI · BiSyRMSD · LDDT-LP).
 |---|---|
 | Structure generation | **ESMFold2** (primary), Boltz-2 / Boltz-2 NR-fine-tune, OpenFold3, AlphaFold3, Protenix, Chai-1 |
 | Scoring (official metric) | **OpenStructure (OST 2.11.1)** — LDDT-PLI / BiSyRMSD / LDDT-LP |
-| Physics selection | **fairchem / UMA (OMol25)** ML interatomic potential; ASE (optimization) |
 | Protonation | PDBFixer + OpenMM (AMBER14, protein H); RDKit (ligand H); Open Babel |
 | Cheminformatics | RDKit (bond-order assignment, symmetry-aware matching) |
 | Docking / refinement (tested) | AutoDock Vina, GNINA, OpenMM |
