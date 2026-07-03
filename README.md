@@ -64,10 +64,3 @@ All scores are measured on the official board (LDDT-PLI · BiSyRMSD · LDDT-LP).
 | Cheminformatics | RDKit (bond-order assignment, symmetry-aware matching) |
 | Docking / refinement (tested) | AutoDock Vina, GNINA, OpenMM |
 | Compute | HiPerGator (SLURM); Python (NumPy, SciPy) |
-
-## Contribution
-
-- **AF3-pocket transplant lever** — placing the ESMFold2-selected ligand into an AlphaFold3-quality receptor pocket, a simple splice that adds **+0.030 LDDT-PLI** over raw ESM and forms our best submission.
-- **Rigorous, ground-truth validation harness** — a 17-system PXR hold-out scored with the *official* OST scorer, used to gate every lever (the public board is fragment-only, so this is the real generalization check).
-- **Systematic falsification** of confidence-selection, refinement, and failure-tail-rescue levers — mapping the *selection wall* (pick ≈ random, oracle ~0.72 uncapturable) with long tail data rather than intuition.
-- **Physics-selection reproduction + bug fix (to do)** — identified that a naive per-pose pocket makes interaction energies *incomparable* (variable atom set), and fixed it with a **fixed-pocket** formulation.
